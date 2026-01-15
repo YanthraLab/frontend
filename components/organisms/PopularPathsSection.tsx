@@ -33,12 +33,12 @@ export const PopularPathsSection = () => {
 
   return (
     <section className="py-20 bg-white dark:bg-slate-950">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto w-[75%] px-4 md:px-6">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
             Popular Learning Paths
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-sm">
             Start your journey with our most loved courses
           </p>
         </div>
@@ -63,13 +63,13 @@ export const PopularPathsSection = () => {
               </div>
 
               <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{course.title}</h3>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{course.title}</h3>
                 <div className="flex items-center gap-4 text-slate-600 dark:text-slate-400 text-sm mb-6">
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex items-center gap-1.5 text-xs">
                         <Clock className="w-3.5 h-3.5" />
                         <span>{course.duration}</span>
                     </div>
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex items-center gap-1.5 text-xs">
                         <Users className="w-3.5 h-3.5" />
                         <span>{course.students} students</span>
                     </div>

@@ -11,15 +11,15 @@ export const HeroSection = () => {
       <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[500px] h-[500px] bg-blue-500/10 dark:bg-blue-600/20 rounded-full blur-[100px]" />
       <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] bg-cyan-500/10 dark:bg-cyan-600/10 rounded-full blur-[100px]" />
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container w-[75%] flex justify-center items-center px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+          <div className="space-y-6 ">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-cyan-600 dark:text-cyan-400 text-sm font-medium shadow-sm dark:shadow-none">
               <Cpu className="w-4 h-4" />
               <span>IoT Self-Learning Platform</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
               Master IoT <br />
               Development with <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-400">
@@ -27,7 +27,7 @@ export const HeroSection = () => {
               </span>
             </h1>
 
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-lg">
+            <p className="text-md text-slate-600 dark:text-slate-400 max-w-lg">
               Learn, Build, and Innovate with structured courses, hands-on
               projects, and a thriving community of IoT enthusiasts. From
               Arduino to advanced robotics.
@@ -64,7 +64,7 @@ export const HeroSection = () => {
                   <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-blue-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 group-hover:border-blue-200 dark:group-hover:border-blue-500/50 transition-all duration-300 shadow-sm dark:shadow-none">
                     <feature.icon className="w-6 h-6" />
                   </div>
-                  <span className="text-slate-600 dark:text-slate-400 font-medium group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors">
+                  <span className="text-slate-600 text-xs dark:text-slate-400 font-medium group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors">
                     {feature.label}
                   </span>
                 </div>

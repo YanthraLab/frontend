@@ -36,10 +36,10 @@ export const WhyChooseSection = () => {
 
   return (
     <section className="py-20 bg-slate-50/80 dark:bg-[#0B1120]">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container w-[75%] mx-auto px-4 md:px-6">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Why Choose Yanthra?</h2>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">Why Choose Yanthra?</h2>
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-sm">
             Everything you need to become an IoT expert
           </p>
         </div>
@@ -50,8 +50,8 @@ export const WhyChooseSection = () => {
                     <div className={`w-12 h-12 rounded-lg ${feature.bg} ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                         <feature.icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{feature.title}</h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{feature.description}</p>
+                    <h3 className="text-md font-bold text-slate-900 dark:text-white mb-3">{feature.title}</h3>
+                    <p className="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">{feature.description}</p>
                 </div>
             ))}
         </div>
