@@ -2,14 +2,13 @@
 
 import { Button } from "@/components/ui/button";
 import { Cpu, Wifi, Activity, Cloud, Play } from "lucide-react";
-import Link from "next/link";
 
 export const HeroSection = () => {
   return (
     <section className="relative flex justify-center items-center w-full h-screen bg-slate-50 dark:bg-slate-950 pt-20 pb-16 overflow-hidden">
       {/* Background gradients/effects could go here */}
-      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[500px] h-[500px] bg-blue-500/10 dark:bg-blue-600/20 rounded-full blur-[100px]" />
-      <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] bg-cyan-500/10 dark:bg-cyan-600/10 rounded-full blur-[100px]" />
+      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-125 h-125 bg-blue-500/10 dark:bg-blue-600/20 rounded-full blur-[100px]" />
+      <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-125 h-125 bg-cyan-500/10 dark:bg-cyan-600/10 rounded-full blur-[100px]" />
 
       <div className="container w-[75%] flex justify-center items-center px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -22,7 +21,7 @@ export const HeroSection = () => {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
               Master IoT <br />
               Development with <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-400">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-400">
                 Yanthra
               </span>
             </h1>
@@ -90,7 +89,7 @@ export const HeroSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="aspect-video w-full bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-slate-400 dark:text-slate-600">
+              <div className="aspect-video w-full bg-linear-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-slate-400 dark:text-slate-600">
                 {/* This would be the image */}
                 <div className="text-center p-8">
                   <Cpu className="w-16 h-16 mx-auto mb-4 opacity-50" />

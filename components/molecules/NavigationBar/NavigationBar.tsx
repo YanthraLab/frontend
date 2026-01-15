@@ -9,7 +9,7 @@ const NavigationBar = () => {
         <div className="container mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
             <div className="flex items-center gap-2">
                 <Cpu className="w-8 h-8 text-cyan-500 dark:text-cyan-400" />
-                <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-400">
+                <span className="text-xl font-bold bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-400">
                     Yanthra
                 </span>
             </div>
