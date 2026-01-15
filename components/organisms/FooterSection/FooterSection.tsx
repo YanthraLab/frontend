@@ -1,6 +1,6 @@
 "use client";
 
-import { FooterLinks, CTASection } from "../molecules";
+import { FooterLinks, CTASection } from "../../molecules";
 
 export const FooterSection = () => {
   return (

@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Cpu, Wifi, Activity, Cloud, Play } from "lucide-react";
+import Link from "next/link";
 
 export const HeroSection = () => {
   return (
@@ -33,12 +34,14 @@ export const HeroSection = () => {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-md px-8 shadow-md"
-              >
-                Start Learning Free
-              </Button>
+              <Link href="/signup">
+                <Button
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-700 text-white rounded-md px-8 shadow-md"
+                >
+                  Start Learning Free
+                </Button>
+              </Link>
               <Button
                 size="lg"
                 variant="outline"

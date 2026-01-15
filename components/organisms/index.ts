@@ -1,4 +1,4 @@
 export * from "./HeroSection";
 export * from "./WhyChooseSection";
-export * from "./PopularPathsSection";
+export * from "./PopularPathSection";
 export * from "./FooterSection";

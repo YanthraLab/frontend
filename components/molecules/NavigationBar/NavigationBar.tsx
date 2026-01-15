@@ -20,13 +20,15 @@ const NavigationBar = () => {
                     Admin
                 </Link>
                 
-                <Link href="/login" className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
+                <Link href="/signin" className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
                     Sign In
                 </Link>
                 
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white font-medium">
-                    Get Started
-                </Button>
+                <Link href="/signup">
+                    <Button className="bg-blue-600 hover:bg-blue-700 text-white font-medium">
+                        Get Started
+                    </Button>
+                </Link>
                 
                 <ThemeSwitch/>
             </div>
