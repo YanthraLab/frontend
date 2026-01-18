@@ -6,8 +6,62 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from "react"
+import { toast } from "sonner"
+import { useRouter } from "next/navigation"
 
-export function SignUpForm() {
+const SignUpForm = () => {
+  const router = useRouter()
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    role: "customer" // Default role
+  })
+  const [loading, setLoading] = useState(false)
+
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL!
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (formData.password !== formData.confirmPassword) {
+      toast.error("Passwords do not match")
+      return
+    }
+
+    setLoading(true)
+    try {
+        // Exclude confirmPassword from the payload
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { confirmPassword, ...signupPayload } = formData;
+        
+      const res = await fetch(`${BASE_URL}/auth/signup`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(signupPayload),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) throw new Error(data.message || "Registration failed")
+
+      toast.success("Account created successfully! Please sign in.")
+      router.push("/signin")
+    } catch (error: any) {
+      toast.error(error.message || "Something went wrong")
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <Card className="w-full max-w-md bg-slate-900 border-slate-800 text-white shadow-xl">
       <CardHeader className="space-y-1 text-center">
@@ -42,37 +96,69 @@ export function SignUpForm() {
           Join Yanthra and start learning IoT
         </CardDescription>
       </CardHeader>
+      <form onSubmit={handleSubmit}>
       <CardContent className="space-y-4">
       <div className="space-y-2">
           <label htmlFor="name" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Full Name</label>
           <div className="relative">
             <User className="absolute left-3 top-2.5 h-4 w-4 text-slate-500" />
-            <Input id="name" placeholder="John Doe" className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" />
+            <Input 
+                id="name" 
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="John Doe" 
+                className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" 
+                required
+            />
           </div>
         </div>
         <div className="space-y-2">
           <label htmlFor="email" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Email</label>
           <div className="relative">
             <Mail className="absolute left-3 top-2.5 h-4 w-4 text-slate-500" />
-            <Input id="email" placeholder="you@example.com" className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" />
+            <Input 
+                id="email" 
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="you@example.com" 
+                className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" 
+                required
+            />
           </div>
         </div>
         <div className="space-y-2">
           <label htmlFor="password"  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Password</label>
           <div className="relative">
             <Lock className="absolute left-3 top-2.5 h-4 w-4 text-slate-500" />
-            <Input id="password" type="password" placeholder="••••••••" className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" />
+            <Input 
+                id="password" 
+                type="password"
+                value={formData.password}
+                onChange={handleChange} 
+                placeholder="••••••••" 
+                className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" 
+                required
+            />
           </div>
         </div>
         <div className="space-y-2">
           <label htmlFor="confirmPassword"  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Confirm Password</label>
           <div className="relative">
             <Lock className="absolute left-3 top-2.5 h-4 w-4 text-slate-500" />
-            <Input id="confirmPassword" type="password" placeholder="••••••••" className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" />
+            <Input 
+                id="confirmPassword" 
+                type="password"
+                value={formData.confirmPassword}
+                onChange={handleChange} 
+                placeholder="••••••••" 
+                className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" 
+                required
+            />
           </div>
         </div>
         <div className="flex items-center space-x-2">
-            <Checkbox id="terms" className="border-slate-600 data-[state=checked]:bg-cyan-500 data-[state=checked]:border-cyan-500" />
+            <Checkbox id="terms" className="border-slate-600 data-[state=checked]:bg-cyan-500 data-[state=checked]:border-cyan-500" required />
             <label
               htmlFor="terms"
               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-slate-400"
@@ -80,10 +166,11 @@ export function SignUpForm() {
               I agree to the <Link href="#" className="text-cyan-500 hover:underline">Terms of Service</Link> and <Link href="#" className="text-cyan-500 hover:underline">Privacy Policy</Link>
             </label>
           </div>
-        <Button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold h-10">
-          Create Account
+        <Button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold h-10" type="submit" disabled={loading}>
+          {loading ? "Creating Account..." : "Create Account"}
         </Button>
       </CardContent>
+      </form>
       <CardFooter className="flex justify-center">
         <div className="text-sm text-slate-400">
           Already have an account?{" "}
@@ -95,3 +182,5 @@ export function SignUpForm() {
     </Card>
   )
 }
+
+export { SignUpForm }
