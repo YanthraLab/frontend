@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 
 const CTASection = () => {
   return (
@@ -10,12 +12,14 @@ const CTASection = () => {
         <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-xl mx-auto text-xs">
           Join thousands of students learning IoT development with Yanthra
         </p>
-        <Button
-          size="lg"
-          className="bg-blue-600 hover:bg-blue-700 text-white px-8 rounded-md shadow-md"
-        >
-          Create Free Account
-        </Button>
+        <Link href="/signup">
+          <Button
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 rounded-md shadow-md"
+          >
+            Create Free Account
+          </Button>
+        </Link>
       </div>
     </div>
   );

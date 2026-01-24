@@ -60,10 +60,10 @@ const SignInForm = () => {
   };
 
   return (
-    <Card className="w-full max-w-md bg-slate-900 border-slate-800 text-white shadow-xl">
+    <Card className="w-full max-w-md bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-800 dark:text-white shadow-xl">
       <CardHeader className="space-y-1 text-center">
         <div className="flex justify-center mb-4">
-          <div className="flex items-center gap-2 text-cyan-400">
+          <div className="flex items-center gap-2 text-cyan-500 dark:text-cyan-400">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -89,7 +89,7 @@ const SignInForm = () => {
           </div>
         </div>
         <CardTitle className="text-xl">Welcome Back</CardTitle>
-        <CardDescription className="text-slate-400">
+        <CardDescription className="text-slate-600 dark:text-slate-400">
           Sign in to continue your IoT learning journey
         </CardDescription>
       </CardHeader>
@@ -109,7 +109,7 @@ const SignInForm = () => {
                 type="email"
                 placeholder="you@example.com"
                 value={signInData.email}
-                className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500"
+                className="pl-9 bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white placeholder:text-slate-500 focus-visible:ring-cyan-500"
                 onChange={(e) =>
                   setSignInData({ ...signInData, email: e.target.value })
                 }
@@ -130,7 +130,7 @@ const SignInForm = () => {
                 type="password"
                 placeholder="••••••••"
                 value={signInData.password}
-                className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500"
+                className="pl-9 bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white placeholder:text-slate-500 focus-visible:ring-cyan-500"
                 onChange={(e) =>
                   setSignInData({ ...signInData, password: e.target.value })
                 }
@@ -150,14 +150,14 @@ const SignInForm = () => {
 
               <label
                 htmlFor="remember"
-                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-slate-400"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-slate-600 dark:text-slate-400"
               >
                 Remember me
               </label>
             </div>
             <Link
               href="#"
-              className="text-sm font-medium text-cyan-500 hover:text-cyan-400"
+              className="text-sm font-medium text-cyan-600 dark:text-cyan-500 hover:text-cyan-700 dark:hover:text-cyan-400"
             >
               Forgot password?
             </Link>
@@ -171,11 +171,11 @@ const SignInForm = () => {
         </CardContent>
       </form>
       <CardFooter className="flex justify-center">
-        <div className="text-sm text-slate-400">
+        <div className="text-sm text-slate-600 dark:text-slate-400">
           Don&apos;t have an account?{" "}
           <Link
             href="/signup"
-            className="text-cyan-500 hover:text-cyan-400 font-medium"
+            className="text-cyan-600 dark:text-cyan-500 hover:text-cyan-700 dark:hover:text-cyan-400 font-medium"
           >
             Sign up
           </Link>

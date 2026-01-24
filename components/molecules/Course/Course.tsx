@@ -1,5 +1,7 @@
 import { Users, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import Image from "next/image";
 
 interface CourseProps {
   title: string;
@@ -8,6 +10,7 @@ interface CourseProps {
   students: string;
   image: string;
   levelColor: string;
+  picture: string;
 }
 
 const Course = ({
@@ -17,7 +20,9 @@ const Course = ({
   students,
   image,
   levelColor,
+  picture,
 }: CourseProps) => {
+  const [ImageError, setImageError] = useState(false);
   return (
     <div className="bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-slate-300 dark:hover:border-slate-700 transition-colors flex flex-col shadow-sm dark:shadow-none">
       {/* Image Placeholder */}
@@ -30,9 +35,18 @@ const Course = ({
           </span>
         </div>
         <div className="absolute inset-0 bg-transparent dark:bg-slate-900/10 group-hover:bg-transparent transition-colors" />
-        <div className="w-full h-full flex items-center justify-center text-slate-400 dark:text-slate-700 font-medium">
-          Course Image
-        </div>
+        {!ImageError ? (
+          <Image
+            src={`/${picture}`}
+            alt={title}
+            fill
+            className="object-cover w-full h-full"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-slate-400 dark:text-slate-700 font-medium">
+            Course Image
+          </div>
+        )}
       </div>
 
       <div className="p-6 flex-1 flex flex-col">
@@ -59,4 +73,4 @@ const Course = ({
     </div>
   );
 };
-export {Course}
+export { Course };

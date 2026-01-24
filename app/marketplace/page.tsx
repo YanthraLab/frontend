@@ -5,7 +5,7 @@ import { FeaturedProducts } from "@/components/organisms/Marketplace/FeaturedPro
 
 export default function MarketplacePage() {
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-white dark:bg-slate-950">
       <DashboardHeader />
       <main className="container mx-auto space-y-12 p-4 md:p-8">
         <MarketplaceHero />

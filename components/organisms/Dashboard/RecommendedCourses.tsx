@@ -29,22 +29,22 @@ export function RecommendedCourses() {
     <div className="space-y-4">
         <div className="flex items-center justify-between">
              <div className="space-y-1">
-                <h3 className="text-xl font-bold text-white">Recommended for You</h3>
-                <p className="text-sm text-slate-400">Based on your learning path</p>
+                <h3 className="text-xl font-bold text-slate-800 dark:text-white">Recommended for You</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Based on your learning path</p>
             </div>
-            <Button variant="outline" className="text-cyan-500 border-slate-700 hover:bg-slate-800">View All</Button>
+            <Button variant="outline" className="text-cyan-600 dark:text-cyan-500 border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">View All</Button>
         </div>
      
       <div className="grid gap-4 md:grid-cols-3">
         {recommendations.map((item, index) => (
-          <Card key={index} className="bg-slate-900 border-slate-800 hover:border-slate-700 transition-colors">
+          <Card key={index} className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
             <CardContent className="p-6 space-y-4">
               <div className={`p-0 ${item.color}`}>
                 {item.icon}
               </div>
               <div className="space-y-1">
-                <h4 className="font-semibold text-white">{item.title}</h4>
-                <Badge variant="secondary" className="bg-slate-800 text-slate-400 hover:bg-slate-700">
+                <h4 className="font-semibold text-slate-800 dark:text-white">{item.title}</h4>
+                <Badge variant="secondary" className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-700">
                     {item.category}
                 </Badge>
               </div>

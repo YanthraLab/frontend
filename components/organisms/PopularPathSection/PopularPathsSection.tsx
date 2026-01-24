@@ -10,6 +10,7 @@ export const PopularPathsSection = () => {
       duration: "4 weeks",
       students: "12.5K",
       image: "bg-emerald-100 dark:bg-emerald-900/20", // Placeholder color
+      picture :"close-up-home-made-robot.jpg",
       levelColor: "bg-cyan-500",
     },
     {
@@ -18,6 +19,7 @@ export const PopularPathsSection = () => {
       duration: "6 weeks",
       students: "8.2K",
       image: "bg-amber-100 dark:bg-amber-900/20", // Placeholder color
+      picture :"robot-style-car-with-joystick.jpg",
       levelColor: "bg-blue-500",
     },
     {
@@ -26,6 +28,7 @@ export const PopularPathsSection = () => {
       duration: "8 weeks",
       students: "5.1K",
       image: "bg-purple-100 dark:bg-purple-900/20", // Placeholder color
+      picture :"children-making-robot.jpg",
       levelColor: "bg-indigo-500",
     },
   ];
@@ -51,6 +54,7 @@ export const PopularPathsSection = () => {
               duration={course.duration}
               students={course.students}
               image={course.image}
+              picture={course.picture}
               levelColor={course.levelColor}
             />
           ))}

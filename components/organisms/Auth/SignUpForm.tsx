@@ -63,10 +63,10 @@ const SignUpForm = () => {
   }
 
   return (
-    <Card className="w-full max-w-md bg-slate-900 border-slate-800 text-white shadow-xl">
+    <Card className="w-full max-w-md bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-800 dark:text-white shadow-xl">
       <CardHeader className="space-y-1 text-center">
         <div className="flex justify-center mb-4">
-          <div className="flex items-center gap-2 text-cyan-400">
+          <div className="flex items-center gap-2 text-cyan-500 dark:text-cyan-400">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -92,7 +92,7 @@ const SignUpForm = () => {
           </div>
         </div>
         <CardTitle className="text-xl">Create Account</CardTitle>
-        <CardDescription className="text-slate-400">
+        <CardDescription className="text-slate-600 dark:text-slate-400">
           Join Yanthra and start learning IoT
         </CardDescription>
       </CardHeader>
@@ -107,7 +107,7 @@ const SignUpForm = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="John Doe" 
-                className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" 
+                className="pl-9 bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" 
                 required
             />
           </div>
@@ -122,7 +122,7 @@ const SignUpForm = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="you@example.com" 
-                className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" 
+                className="pl-9 bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" 
                 required
             />
           </div>
@@ -137,7 +137,7 @@ const SignUpForm = () => {
                 value={formData.password}
                 onChange={handleChange} 
                 placeholder="••••••••" 
-                className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" 
+                className="pl-9 bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" 
                 required
             />
           </div>
@@ -152,18 +152,18 @@ const SignUpForm = () => {
                 value={formData.confirmPassword}
                 onChange={handleChange} 
                 placeholder="••••••••" 
-                className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" 
+                className="pl-9 bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white placeholder:text-slate-500 focus-visible:ring-cyan-500" 
                 required
             />
           </div>
         </div>
         <div className="flex items-center space-x-2">
-            <Checkbox id="terms" className="border-slate-600 data-[state=checked]:bg-cyan-500 data-[state=checked]:border-cyan-500" required />
+            <Checkbox id="terms" className="border-slate-400 dark:border-slate-600 data-[state=checked]:bg-cyan-500 data-[state=checked]:border-cyan-500" required />
             <label
               htmlFor="terms"
-              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-slate-400"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-slate-600 dark:text-slate-400"
             >
-              I agree to the <Link href="#" className="text-cyan-500 hover:underline">Terms of Service</Link> and <Link href="#" className="text-cyan-500 hover:underline">Privacy Policy</Link>
+              I agree to the <Link href="#" className="text-cyan-600 dark:text-cyan-500 hover:underline">Terms of Service</Link> and <Link href="#" className="text-cyan-600 dark:text-cyan-500 hover:underline">Privacy Policy</Link>
             </label>
           </div>
         <Button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold h-10" type="submit" disabled={loading}>
@@ -172,9 +172,9 @@ const SignUpForm = () => {
       </CardContent>
       </form>
       <CardFooter className="flex justify-center">
-        <div className="text-sm text-slate-400">
+        <div className="text-sm text-slate-600 dark:text-slate-400">
           Already have an account?{" "}
-          <Link href="/signin" className="text-cyan-500 hover:text-cyan-400 font-medium">
+          <Link href="/signin" className="text-cyan-600 dark:text-cyan-500 hover:text-cyan-700 dark:hover:text-cyan-400 font-medium">
             Sign in
           </Link>
         </div>

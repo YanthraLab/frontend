@@ -32,18 +32,18 @@ export function CategoryGrid() {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold text-white">Browse by Category</h2>
+      <h2 className="text-xl font-bold text-slate-800 dark:text-white">Browse by Category</h2>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {categories.map((category, index) => (
           <Card key={index} className={`cursor-pointer border transition-colors ${category.color}`}>
             <CardContent className="flex items-center justify-between p-6">
               <div className="flex flex-col gap-4">
-                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-950/50">
+                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/50 dark:bg-slate-950/50">
                     {category.icon}
                  </div>
-                 <h3 className="font-semibold text-white">{category.title}</h3>
+                 <h3 className="font-semibold text-slate-800 dark:text-white">{category.title}</h3>
               </div>
-              <div className="self-start rounded-full bg-slate-950/50 px-2.5 py-0.5 text-xs font-medium text-slate-400">
+              <div className="self-start rounded-full bg-white/50 dark:bg-slate-950/50 px-2.5 py-0.5 text-xs font-medium text-slate-600 dark:text-slate-400">
                 {category.count}
               </div>
             </CardContent>

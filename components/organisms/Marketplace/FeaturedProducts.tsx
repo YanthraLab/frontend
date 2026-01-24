@@ -44,15 +44,15 @@ export function FeaturedProducts() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-bold text-white">Featured Products</h2>
-        <Button variant="outline" className="gap-2 text-cyan-500 border-slate-700 hover:bg-slate-800">
+        <h2 className="text-xl font-bold text-slate-800 dark:text-white">Featured Products</h2>
+        <Button variant="outline" className="gap-2 text-cyan-600 dark:text-cyan-500 border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">
             View All <ArrowUpRight className="h-4 w-4" />
         </Button>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {products.map((product, index) => (
-          <Card key={index} className="overflow-hidden bg-slate-900 border-slate-800">
+          <Card key={index} className="overflow-hidden bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800">
             <div className="aspect-video relative bg-white p-4 flex items-center justify-center">
                <div className="absolute left-4 top-4 flex gap-2">
                  <Badge className={
@@ -74,20 +74,20 @@ export function FeaturedProducts() {
             </div>
             <CardContent className="space-y-4 p-6">
                 <div className="space-y-1">
-                    <span className="text-xs text-cyan-500 px-2 py-1 rounded-full bg-cyan-950/30 border border-cyan-900/50">
+                    <span className="text-xs text-cyan-600 dark:text-cyan-500 px-2 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950/30 border border-cyan-200 dark:border-cyan-900/50">
                         {product.category}
                     </span>
-                    <h3 className="text-lg font-bold text-white pt-2">{product.title}</h3>
+                    <h3 className="text-lg font-bold text-slate-800 dark:text-white pt-2">{product.title}</h3>
                 </div>
                 
                 <div className="flex items-center gap-2">
                     <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-                    <span className="text-sm font-medium text-white">{product.rating}</span>
-                    <span className="text-sm text-slate-400">({product.reviews} reviews)</span>
+                    <span className="text-sm font-medium text-slate-800 dark:text-white">{product.rating}</span>
+                    <span className="text-sm text-slate-600 dark:text-slate-400">({product.reviews} reviews)</span>
                 </div>
 
                 <div className="flex items-center justify-between pt-2">
-                    <span className="text-xl font-bold text-cyan-400">{product.price}</span>
+                    <span className="text-xl font-bold text-cyan-600 dark:text-cyan-400">{product.price}</span>
                     <Button size="sm" className="bg-cyan-600 hover:bg-cyan-700">
                         <ShoppingCart className="mr-2 h-4 w-4" />
                         Add to Cart

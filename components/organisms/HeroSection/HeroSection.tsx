@@ -2,9 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import { Cpu, Wifi, Activity, Cloud, Play } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export const HeroSection = () => {
+  const [imageError, setImageError] = useState(false);
   return (
     <section className="relative flex justify-center items-center w-full h-screen bg-slate-50 dark:bg-slate-950 pt-20 pb-16 overflow-hidden">
       {/* Background gradients/effects could go here */}
@@ -76,34 +79,44 @@ export const HeroSection = () => {
 
           <div className="relative">
             {/* Image Placeholder */}
-            <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 shadow-2xl relative">
-              <div className="absolute -right-4 -top-4 z-20">
-                <div className="bg-cyan-500 rounded-lg p-3 shadow-lg flex items-center gap-3">
-                  <div className="bg-white/20 p-2 rounded-full">
-                    <Activity className="w-5 h-5 text-white" />
+            <div className="absolute -right-4 -top-4 z-20">
+              <div className="bg-cyan-500 rounded-lg p-3 shadow-lg flex items-center gap-3">
+                <div className="bg-white/20 p-2 rounded-full">
+                  <Activity className="w-5 h-5 text-white" />
+                </div>
+                <div className="text-white">
+                  <div className="text-xs font-medium opacity-90">
+                    Certificate Ready
                   </div>
-                  <div className="text-white">
-                    <div className="text-xs font-medium opacity-90">
-                      Certificate Ready
-                    </div>
-                    <div className="text-xs opacity-75">
-                      Get industry-recognized certs
-                    </div>
+                  <div className="text-xs opacity-75">
+                    Get industry-recognized certs
                   </div>
                 </div>
               </div>
-              <div className="aspect-video w-full bg-linear-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-slate-400 dark:text-slate-600">
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 shadow-2xl relative">
+              <div className="aspect-video w-full  bg-linear-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-slate-400 dark:text-slate-600">
                 {/* This would be the image */}
-                <div className="text-center p-8">
-                  <Cpu className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                  <p>Interactive Learning Environment</p>
-                </div>
+                {!imageError ? (
+                  <Image
+                    src="/portrait-female-working.jpg"
+                    alt="Hero Illustration"
+                    width={600}
+                    height={400}
+                    className="object-cover"
+                    onError={() => setImageError(true)}
+                    priority
+                  />
+                ) : (
+                  <div className="text-center p-8">
+                    <Cpu className="w-16 h-16 mx-auto mb-4 opacity-50" />
+                    <p>Interactive Learning Environment</p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
-
-
       </div>
     </section>
   );

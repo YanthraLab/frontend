@@ -4,16 +4,16 @@ import { ContinueLearning } from "@/components/organisms/Dashboard/ContinueLearn
 import { RecentActivity } from "@/components/organisms/Dashboard/RecentActivity"
 import { RecommendedCourses } from "@/components/organisms/Dashboard/RecommendedCourses"
 
-export default function DashboardPage() {
+const DashboardPage = () =>{
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-white dark:bg-slate-950">
       <DashboardHeader />
-      <main className="container mx-auto space-y-8 p-4 md:p-8">
+      <main className="container mx-auto space-y-8 p-4 md:p-8 w-[85%]">
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold text-white flex items-center gap-2">
-            Welcome back, Nimal! <span className="text-3xl">👋</span>
+          <h1 className="text-3xl font-bold text-slate-800 dark:text-white flex items-center gap-2">
+            Welcome back, Nimal!
           </h1>
-          <p className="text-slate-400">Continue your IoT learning journey</p>
+          <p className="text-slate-600 dark:text-slate-400">Continue your IoT learning journey</p>
         </div>
 
         <StatsOverview />
@@ -32,3 +32,5 @@ export default function DashboardPage() {
     </div>
   )
 }
+
+export default DashboardPage
