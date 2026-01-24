@@ -158,7 +158,7 @@ const SignUpForm = () => {
           </div>
         </div>
         <div className="flex items-center space-x-2">
-            <Checkbox id="terms" className="border-slate-400 dark:border-slate-600 data-[state=checked]:bg-cyan-500 data-[state=checked]:border-cyan-500" required />
+            <Checkbox id="terms" className="border-slate-400 dark:border-slate-600 data-[state=checked]:bg-cyan-500 data-[state=checked]:border-cyan-500" />
             <label
               htmlFor="terms"
               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-slate-600 dark:text-slate-400"
