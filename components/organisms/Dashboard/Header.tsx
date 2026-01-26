@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { NavigationDropdownMenu } from "./NavigationDropdownMenu";
+import { UserDropdownMenu } from "./UserDropdownMenu";
 import {
   learningMenuSections,
   marketplaceMenuSections,
@@ -23,7 +24,7 @@ import {
   messagesMenuSections,
 } from "./navigationMenuData";
 
-type ActiveMenu = "learning" | "marketplace" | "innovation" | "messages" | null;
+type ActiveMenu = "learning" | "marketplace" | "innovation" | "messages" | "user" | null;
 
 const DashboardHeader = () => {
   const pathname = usePathname();
@@ -193,14 +194,26 @@ const DashboardHeader = () => {
             <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-red-500 ring-2 ring-slate-950" />
             <span className="sr-only">Notifications</span>
           </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="rounded-full text-slate-400 hover:text-white hover:bg-slate-800"
-          >
-            <User className="h-5 w-5" />
-            <span className="sr-only">User menu</span>
-          </Button>
+          <div className="relative">
+            <Button
+              onClick={() => toggleMenu("user")}
+              variant="ghost"
+              size="icon"
+              className={cn(
+                "rounded-full text-slate-400 hover:text-white hover:bg-slate-800",
+                activeMenu === "user" && "bg-slate-800 text-white"
+              )}
+              aria-haspopup="menu"
+              aria-expanded={activeMenu === "user"}
+            >
+              <User className="h-5 w-5" />
+              <span className="sr-only">User menu</span>
+            </Button>
+            <UserDropdownMenu
+              isOpen={activeMenu === "user"}
+              onClose={closeMenu}
+            />
+          </div>
         </div>
       </div>
     </header>
