@@ -21,7 +21,7 @@ const NavigationBar = () => {
         </div>
 
         <div className="flex items-center gap-6">
-          {user ? (
+          {!user ? (
             <Link
               href="/admin"
               className="hidden md:flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
@@ -32,7 +32,7 @@ const NavigationBar = () => {
           ) : (
             <>
               <Link
-                href="/signin"
+                href="/login"
                 className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
               >
                 Sign In
