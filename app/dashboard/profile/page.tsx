@@ -1,8 +1,9 @@
 
 
-const Profile=()=>{
-    return(
-        <div className="">Hello</div>
-    );
+import { ProfileSettings } from '@/components/organisms/Profile';
+
+const Profile = () => {
+    return <ProfileSettings />;
 }
+
 export default Profile;

@@ -3,3 +3,9 @@ export * from "./WhyChooseSection";
 export * from "./PopularPathSection";
 export * from "./FooterSection";
 export * from "./Auth"
+export * from "./Profile"
+export * from "./Tutorials"
+export * from "./Recommendations"
+export * from "./Bookmarks"
+export * from "./Quiz"
+export * from "./Assignments"

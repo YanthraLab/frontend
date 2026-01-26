@@ -1,13 +1,115 @@
-import { DashboardHeader } from "@/components/organisms/Dashboard/Header";
+import { BookmarksView } from "@/components/organisms/Bookmarks";
+import { CircleDot, CheckSquare, Activity, Thermometer, FileText, Wifi, MessageSquare } from "lucide-react";
+
+const bookmarksData = [
+  {
+    id: '1',
+    title: 'Introduction to IoT and Arduino',
+    description: 'Understanding IoT ecosystem, platforms, and basic electronics',
+    level: 'beginner' as const,
+    category: 'Video',
+    subcategory: 'Arduino',
+    duration: '25 min',
+    rating: 4.8,
+    matchPercentage: 85,
+    bookmarkedDate: '1/14/2025',
+    status: 'not-started' as const,
+    icon: <CircleDot className="w-6 h-6" />,
+  },
+  {
+    id: '2',
+    title: 'Temperature and Humidity Sensors (DHT11/DHT22)',
+    description: 'Reading environmental data with sensor interfaces',
+    level: 'intermediate' as const,
+    category: 'Video',
+    subcategory: 'Sensors',
+    duration: '35 min',
+    matchPercentage: 90,
+    bookmarkedDate: '1/15/2025',
+    status: 'not-started' as const,
+    icon: <Thermometer className="w-6 h-6" />,
+  },
+  {
+    id: '3',
+    title: 'Quiz: Arduino Basics',
+    description: 'Test your understanding of Arduino fundamentals',
+    level: 'beginner' as const,
+    category: 'Quiz',
+    subcategory: 'Arduino',
+    duration: '15 min',
+    matchPercentage: 85,
+    bookmarkedDate: '1/16/2025',
+    status: 'not-started' as const,
+    icon: <CheckSquare className="w-6 h-6" />,
+  },
+  {
+    id: '4',
+    title: 'Ultrasonic Distance Measurement',
+    description: 'Using HC-SR04 sensor for distance detection',
+    level: 'intermediate' as const,
+    category: 'Video',
+    subcategory: 'Sensors',
+    duration: '30 min',
+    rating: 4.7,
+    matchPercentage: 90,
+    bookmarkedDate: '1/17/2025',
+    status: 'in-progress' as const,
+    icon: <Activity className="w-6 h-6" />,
+  },
+  {
+    id: '5',
+    title: 'Assignment: Traffic Light System',
+    description: 'Build a working traffic light control with Arduino',
+    level: 'beginner' as const,
+    category: 'Assignment',
+    subcategory: 'Arduino',
+    duration: '50 min',
+    matchPercentage: 85,
+    bookmarkedDate: '1/18/2025',
+    status: 'in-progress' as const,
+    icon: <FileText className="w-6 h-6" />,
+  },
+  {
+    id: '6',
+    title: 'ESP32 WiFi Connectivity',
+    description: 'Connect ESP32 to WiFi and send data to cloud',
+    level: 'intermediate' as const,
+    category: 'Video',
+    subcategory: 'ESP32',
+    duration: '35 min',
+    matchPercentage: 90,
+    bookmarkedDate: '1/19/2025',
+    status: 'not-started' as const,
+    icon: <Wifi className="w-6 h-6" />,
+  },
+  {
+    id: '7',
+    title: 'MQTT Protocol Basics',
+    description: 'Understanding MQTT for IoT communication',
+    level: 'advanced' as const,
+    category: 'Video',
+    subcategory: 'Communication',
+    duration: '55 min',
+    bookmarkedDate: '1/20/2025',
+    status: 'not-started' as const,
+    icon: <MessageSquare className="w-6 h-6" />,
+  },
+  {
+    id: '8',
+    title: 'OLED Display with I2C',
+    description: 'Using OLED displays for better visualization',
+    level: 'intermediate' as const,
+    category: 'Video',
+    subcategory: 'Display',
+    duration: '45 min',
+    rating: 4.8,
+    matchPercentage: 90,
+    bookmarkedDate: '1/21/2025',
+    status: 'not-started' as const,
+    icon: <Activity className="w-6 h-6" />,
+  },
+];
 
 export default function BookmarksPage() {
-  return (
-    <div className="min-h-screen bg-white dark:bg-slate-950">
-      <DashboardHeader />
-      <main className="container mx-auto space-y-8 p-4 md:p-8">
-        <h1 className="text-3xl font-bold text-slate-800 dark:text-white">My Bookmarks</h1>
-        <p className="text-slate-600 dark:text-slate-400">Saved tutorials and resources.</p>
-      </main>
-    </div>
-  );
+  return <BookmarksView bookmarks={bookmarksData} />;
 }
